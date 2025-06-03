@@ -5,9 +5,9 @@ import matplotlib.gridspec as gridspec
 import os
 import sys
 
-EXPS_DIR = '../dat/expansions/'
-SOL_DIR = '../dat/solutions/'
-IMG_DIR = '../dat/imgs/'
+EXPS_DIR = '/home/nvidia/project/amra/dat/expansions/'
+SOL_DIR = '/home/nvidia/project/amra/dat/solutions/'
+IMG_DIR = '/home/nvidia/project/amra/dat/imgs/'
 
 # map must be input through command line
 MAP = sys.argv[1]

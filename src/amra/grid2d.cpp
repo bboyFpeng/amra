@@ -33,23 +33,23 @@ m_start_set(false),
 m_goal_set(false)
 {
 	m_map = std::make_unique<MovingAI>(mapname);
-
+	//使用 std::make_unique 函数创建一个 MovingAI 类型的智能指针，并将其赋值给成员变量 m_map
 	// reset everything
 	for (MapState* s : m_states) {
 		if (s != NULL) {
 			delete s;
 			s = nullptr;
 		}
-	}
-	m_state_to_id.clear();
+	}  //释放m_states 容器中的内容，内存管理
+	m_state_to_id.clear();//清空该容器中的所有元素
 }
 
 void Grid2D::CreateSearch()
 {
-	if (GRID == 4) {
+	if (GRID == 4) {  //四联通
 		m_heurs.emplace_back(new ManhattanDist(this));
 	}
-	else if (GRID == 8) {
+	else if (GRID == 8) {  //八连通
 		m_heurs.emplace_back(new EuclideanDist(this));
 	}
 	else {
